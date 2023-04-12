@@ -26,15 +26,9 @@ class ViewController: UIViewController {
     //MARK: - Actions
     @IBAction func choiceMade(_ sender: UIButton) {
         
-        if sender.tag == 1 {
-            choice1Button.alpha = 0.7
-            storyBrain.nextStory(answer: 1)
-        } else {
-            choice2Button.alpha = 0.7
-            storyBrain.nextStory(answer: 2)
-        }
-        
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        storyBrain.nextStory(answer: sender.tag)
+
+        updateUI()
         
     }
 
@@ -44,9 +38,6 @@ class ViewController: UIViewController {
         storyLabel.text = storyBrain.getStoryText()
         choice1Button.setTitle(buttonsTitles.button1, for: .normal)
         choice2Button.setTitle(buttonsTitles.button2, for: .normal)
-        
-        choice1Button.alpha = 1
-        choice2Button.alpha = 1
     }
 
 }
