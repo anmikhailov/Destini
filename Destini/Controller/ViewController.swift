@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        choice1Button.titleLabel?.textAlignment = .center
+        choice2Button.titleLabel?.textAlignment = .center
+        
         updateUI()
     }
     
